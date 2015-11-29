@@ -17,8 +17,8 @@ buildscript {
 
 apply plugin: 'forge'
 apply plugin: 'maven-publish'
-group= "com.nekokittygames.thaumicstability" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "thaumicstability"
+group= "com.nekokittygames.thaumicSanity" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "thaumicSanity"
 
 minecraft {
     version = "1.7.10-10.13.4.1566-1.7.10"
@@ -80,18 +80,18 @@ task sourcesJar(type: Jar) {
 publishing {
     publications {
         main(MavenPublication) {
-            groupId 'com.nekokittygames.ThaumicStability'
-            artifactId 'ThaumicStability'
+            groupId 'com.nekokittygames.ThaumicSanity'
+            artifactId 'ThaumicSanity'
             from components.java
         }
         dev(MavenPublication) {
-            groupId 'com.nekokittygames.ThaumicStability'
-            artifactId 'ThaumicStability'
+            groupId 'com.nekokittygames.ThaumicSanity'
+            artifactId 'ThaumicSanity'
             artifact deobfJar
         }
         sources(MavenPublication) {
-            groupId 'com.nekokittygames.ThaumicStability'
-            artifactId 'ThaumicStability'
+            groupId 'com.nekokittygames.ThaumicSanity'
+            artifactId 'ThaumicSanity'
             artifact sourcesJar
         }
 
