@@ -29,7 +29,8 @@ public class ThaumicSanity
     public void postInit(FMLPostInitializationEvent event)
     {
         ResearchCategories.researchCategories.get("ELDRITCH").research.remove("ELDRITCHMINOR");
-        (new ResearchItem("ELDRITCHMINOR", "BASICS", new AspectList().add(Aspect.ELDRITCH,3).add(Aspect.MAGIC,3).add(Aspect.VOID,3), 1, 5, 5, new ResourceLocation("thaumcraft", "textures/misc/r_eldritchminor.png"))).setPages(new ResearchPage[]{new ResearchPage("tc.research_page.ELDRITCHMINOR.1"), new ResearchPage((CrucibleRecipe) ConfigResearch.recipes.get("VoidSeed"))}).setRound().setParents("RESEARCHER2").setParentsHidden("RESEARCHER1","INFUSION").setSpecial().registerResearchItem();
+        ResearchItem eldritchMinor=(new ResearchItem("ELDRITCHMINOR", "BASICS", new AspectList().add(Aspect.ELDRITCH,3).add(Aspect.MAGIC,3).add(Aspect.VOID,3), 1, 5, 5, new ResourceLocation("thaumcraft", "textures/misc/r_eldritchminor.png"))).setPages(new ResearchPage[]{new ResearchPage("tc.research_page.ELDRITCHMINOR.1"), new ResearchPage((CrucibleRecipe) ConfigResearch.recipes.get("VoidSeed"))}).setRound().setParents("RESEARCHER2").setParentsHidden("RESEARCHER1","INFUSION").setSpecial().registerResearchItem();
+        ResearchCategories.researchCategories.get("ELDRITCH").research.put("ELDRITCHMINOR",eldritchMinor);
         ResearchCategories.researchCategories.get("ELDRITCH").research.remove("ELDRITCHMAJOR");
         (new ResearchItem("ELDRITCHMAJOR", "ELDRITCH", new AspectList().add(Aspect.ELDRITCH,3).add(Aspect.MAGIC,3).add(Aspect.VOID,3), -1, 0, 0, new ResourceLocation("thaumcraft", "textures/misc/r_eldritchmajor.png"))).setPages(new ResearchPage[]{new ResearchPage("tc.research_page.ELDRITCHMAJOR.1"), new ResearchPage("tc.research_page.ELDRITCHMAJOR.2")}).setRound().setSpecial().setParents("ELDRITCHMINOR","CRIMSON").registerResearchItem();
         ResearchCategories.researchCategories.get("ALCHEMY").research.remove("BATHSALTS");
